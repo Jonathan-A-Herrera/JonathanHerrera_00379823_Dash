@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 21,
+        "y": 21.5
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 50.000000000000014,
+            "y": 598.49645966072171
+          },
+          "nodeIndex": "Dim_Calendario",
+          "nodeLineageTag": "2cf4a28f-dd1d-4d61-8e67-d9e85c39d90a",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 292.20797623806629,
+            "y": -25.851441262352978
+          },
+          "nodeIndex": "dim_canal",
+          "nodeLineageTag": "d24c976f-635c-4b24-9653-bd7d4d91c034",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 209.04305254683567,
+            "y": 268.55173755719653
+          },
+          "nodeIndex": "Dim_Cliente",
+          "nodeLineageTag": "644f1e6a-4e77-4762-bd72-d92df6173467",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 805.69730876512631,
+            "y": 178.37143860949766
+          },
+          "nodeIndex": "dim_sede",
+          "nodeLineageTag": "97c0e33c-5ff7-4d8e-bc5e-97e36b36a87e",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 621.43583462613333,
+            "y": 532.35075839856677
+          },
+          "nodeIndex": "dim_vehiculo",
+          "nodeLineageTag": "91280e11-6c32-452a-9d9d-c3f6842e719d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 583.559511983239,
+            "y": -50
+          },
+          "nodeIndex": "Dim_Vendedor",
+          "nodeLineageTag": "fb5450b7-901c-4cae-a390-d5690976b466",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.70081929776978,
+            "y": 534.10534942446816
+          },
+          "nodeIndex": "fact_Presupuestos",
+          "nodeLineageTag": "2e915f85-271d-474d-a645-f68a636c3d92",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 496.15231916943219,
+            "y": 179.12126311700371
+          },
+          "nodeIndex": "Fact_Ventas",
+          "nodeLineageTag": "a5cafdb6-f208-4f5a-b0af-7adad23d681f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1039.6973087651263,
+            "y": 336.2482298303608
+          },
+          "nodeIndex": "Fotos_Vehiculos",
+          "nodeLineageTag": "84334279-3011-40de-af96-2609208624e6",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

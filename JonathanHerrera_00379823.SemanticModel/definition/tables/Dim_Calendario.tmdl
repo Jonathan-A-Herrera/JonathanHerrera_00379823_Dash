@@ -1,0 +1,75 @@
+table Dim_Calendario
+	lineageTag: 2cf4a28f-dd1d-4d61-8e67-d9e85c39d90a
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1884ed21-75b5-4c9e-ac1d-bf87212fc27c
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variation
+			isDefault
+			relationship: 76842a5a-f50c-4cbf-9d91-409991b84c01
+			defaultHierarchy: LocalDateTable_2eb36bc5-29d7-488d-9932-dab2b06e8b51.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 683a8777-89e8-4712-9a46-979499ad75f5
+		summarizeBy: sum
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semana
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b72a43b-1bd2-47d0-9c0d-e13f965cad38
+		summarizeBy: sum
+		sourceColumn: Semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: 3c3a6033-97bb-4776-a340-49ef456b411d
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero Mes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9035b27e-a18e-4740-920c-2dff3c171114
+		summarizeBy: sum
+		sourceColumn: Numero Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column datekey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e05325c-2cc6-437e-b75d-3ef5819a3fe7
+		summarizeBy: none
+		sourceColumn: datekey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Calendario = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\Mac\Home\Downloads\VentasVehiculos.xlsx"), null, true),
+				    Dim_Calendario_Table = Source{[Item="Dim_Calendario",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Dim_Calendario_Table,{{"Fecha", type date}, {"Año", Int64.Type}, {"Semana", Int64.Type}, {"Mes", type text}, {"Numero Mes", Int64.Type}, {"datekey", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,40 @@
+table dim_sede
+	lineageTag: 97c0e33c-5ff7-4d8e-bc5e-97e36b36a87e
+
+	column id_sede
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ae00486-de40-4322-8288-dbab82ec47f9
+		summarizeBy: none
+		sourceColumn: id_sede
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_sede
+		dataType: string
+		lineageTag: e3462d23-90ab-4632-bd44-e3d129d4367f
+		summarizeBy: none
+		sourceColumn: nombre_sede
+
+		annotation SummarizationSetBy = Automatic
+
+	column ubicacion_sede
+		dataType: string
+		lineageTag: c97072e7-2fb0-4af2-9e17-4142e85415fd
+		summarizeBy: none
+		sourceColumn: ubicacion_sede
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_sede = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\Mac\Home\Downloads\VentasVehiculos.xlsx"), null, true),
+				    dim_sede_Table = Source{[Item="dim_sede",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dim_sede_Table,{{"id_sede", Int64.Type}, {"nombre_sede", type text}, {"ubicacion_sede", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
